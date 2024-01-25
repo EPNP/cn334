@@ -12,3 +12,8 @@ def item_view(request, item_id):
     context_data = {"item_id": item_id   }
     
     return render(request, 'index.html',context= context_data)
+
+def page_view(request, pagename):   
+    template_name = f"{pagename}.html" 
+    context_data = {"page_content": f"{pagename}"}
+    return render(request, template_name, context=context_data)
